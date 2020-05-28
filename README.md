@@ -4,4 +4,4 @@ A place to store helpful, occassionaly used commands you can't bother to remembe
 ## INCLUDES ##
 1. Git
 2. Linux
-3. Docker
+3. Docker (with Windows Command Prompt)

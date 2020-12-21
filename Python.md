@@ -58,53 +58,73 @@
         - Because names point to objects, changing the value assigned to a name just
             makes the name point to a new object. The reference count of the old object
             is decremented, and the new one is incremented
-    - Copying
-        - Assigning an existing variable A to a new variable name B just makes B point to
-            the same object that A does. If you pick up either the A opr B tag and follow
-            their strings, you get to the same object
-        - If the object is immutable (like an integer), its value can't be changed, so
-            both names are essentially read-only
-        - Example:
-            ```python
-            >>> x = 5
-            >>> x
-            5
-            >>> y = x
-            >>> y
-            5
-            >>> x = 29
-            >>> x
-            29
-            >>> y
-            5
-            ```
-        - When we assigned x to y, that made the name y point to the integer object with
-            value 5 that x was also pointing to. Changing x made it point to a new
-            integer object with value 29. It did not change the one containing 5, which y
-            still points to.
-        - But if both names point to a mutable object, you can change the object's value
-            via either name, and you'll see the changed value when you either name.
-        - A list is a mutable array of values.
-            ```python
-            >>> a = [2, 4, 6]
-            >>> b = a
-            >>> a
-            [2, 4, 6]
-            >>> b
-            [2, 4, 6]
-            ```
-        - These list members (a[0], a[1], and a[2]) are themselves like names, pointing
-            to integer objects with the values 2, 4, and 6. The list object keeps its
-            members in order.
-        - Now change the first list element, through the name a, and see that b also
-            changed:
-            ```python
-            >>> a[0] = 99
-            >>> a
-            [99, 4, 6]
-            >>> b
-            [99, 4, 6]
-            ```
-        - When the first list element is changed, it no longer point to the object
-        with value 2, but a new object with value 99. The list is still of type list, but
-        its value (the list elements and their order) is mutable.
+- Copying
+    - Assigning an existing variable A to a new variable name B just makes B point to
+        the same object that A does. If you pick up either the A opr B tag and follow
+        their strings, you get to the same object
+    - If the object is immutable (like an integer), its value can't be changed, so
+        both names are essentially read-only
+    - Example:
+        ```python
+        >>> x = 5
+        >>> x
+        5
+        >>> y = x
+        >>> y
+        5
+        >>> x = 29
+        >>> x
+        29
+        >>> y
+        5
+        ```
+    - When we assigned x to y, that made the name y point to the integer object with
+        value 5 that x was also pointing to. Changing x made it point to a new
+        integer object with value 29. It did not change the one containing 5, which y
+        still points to.
+    - But if both names point to a mutable object, you can change the object's value
+        via either name, and you'll see the changed value when you either name.
+    - A list is a mutable array of values.
+        ```python
+        >>> a = [2, 4, 6]
+        >>> b = a
+        >>> a
+        [2, 4, 6]
+        >>> b
+        [2, 4, 6]
+        ```
+    - These list members (a[0], a[1], and a[2]) are themselves like names, pointing
+        to integer objects with the values 2, 4, and 6. The list object keeps its
+        members in order.
+    - Now change the first list element, through the name a, and see that b also
+        changed:
+        ```python
+        >>> a[0] = 99
+        >>> a
+        [99, 4, 6]
+        >>> b
+        [99, 4, 6]
+        ```
+    - When the first list element is changed, it no longer point to the object
+    with value 2, but a new object with value 99. The list is still of type list, but
+    its value (the list elements and their order) is mutable.
+
+## Numbers and Booleans
+- Zero values are considered False
+    ```Python
+    >>> bool(False)
+    False
+    >>> bool(0)
+    False
+    >>> bool(0.0)
+    False
+    ```
+- Integers
+    - Any sequence of digits in Python represents a *literal integer*
+    - Cannot have leading zeros
+    - Can start integers with 0b, 0o, or 0x
+    - Underscore as a digit separator
+    ```Python
+    1_000_000
+    ```
+    - You can put the underscore anywhere after the first digit. They are ignored. 

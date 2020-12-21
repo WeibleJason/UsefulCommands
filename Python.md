@@ -8,13 +8,13 @@
         - a value consistent with its type
         - a reference count that tracks how often this object is used
     - Types
-        | Name            | Type      | Mutable? | Example        |
-        | --------------- | --------- | -------- | -------------- |
-        | Boolean         | bool      | no       | `True`,`False` |
-        | Integer         | int       | no       | `True`,`False` |
-        | Floating point  | float     | no       | `True`,`False` |
-        | Complex         | complex   | no       | `True`,`False` |
-        | Text string     | str       | no       | `True`,`False` |
+        | Name            | Type      | Mutable? | Example               |
+        | --------------- | --------- | -------- | --------------------- |
+        | Boolean         | bool      | no       | `True`,`False`        |
+        | Integer         | int       | no       | `23`,`25000`,`25_000` |
+        | Floating point  | float     | no       | `3.14`,`2.7e5` |
+        | Complex         | complex   | no       | `3j`,`5 + 9j` |
+        | Text string     | str       | no       | `'alas'`,`"alack"`,`'''a verse attack'''` |
         | List            | list      | yes      | `True`,`False` |
         | Tuple           | tuple     | no       | `True`,`False` |
         | Bytes           | bytes     | no       | `True`,`False` |
